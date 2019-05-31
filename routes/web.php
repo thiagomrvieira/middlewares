@@ -17,4 +17,6 @@ Route::get('/', function () {
 
 
 
-Route::get('/usuarios', 'UsuarioControlador@index')->middleware(PrimeiroMiddleware::class);
+//Route::get('/usuarios', 'UsuarioControlador@index')->middleware(PrimeiroMiddleware::class);
+
+Route::get('/usuarios', 'UsuarioControlador@index')->middleware('primeiro');
