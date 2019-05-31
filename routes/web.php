@@ -1,5 +1,8 @@
 <?php
-use App\Http\Middleware\PrimeiroMiddleware;
+//chamada do middleware no kernel.php
+//use App\Http\Middleware\PrimeiroMiddleware;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes

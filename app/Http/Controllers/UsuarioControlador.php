@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 class UsuarioControlador extends Controller
 {
     public function __construct(){
-        $this->middleware('primeiro');
+        //Chamada do middleware no kernel.php
+        //$this->middleware('primeiro');
     }
 
     public function index(){
