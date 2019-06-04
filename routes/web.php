@@ -23,3 +23,7 @@ Route::get('/', function () {
 // Criando 2 middlewares, e chamando através da rota pela assinatura (primeiro e segundo) criada no kernel.php 
 Route::get('/usuarios', 'UsuarioControlador@index')->middleware('primeiro', 'segundo');
 
+//Passando parâmetros aos middlewares
+Route::get('/terceiro', function () {
+    return "terceiro middleware";
+})->middleware('terceiro:Thiago');
