@@ -37,9 +37,11 @@ Route::get('/negado', function () {
 
 Route::post('login', function(Request $req){
     $login_ok = false;
+    $admin = false;
     switch ($req->input('user')) {
         case 'Joao':
             $login_ok = $req->input("passwd") === "senhajoao";
+            $admin = true;
             break;
         case 'Marcos':
             $login_ok = $req->input("passwd") === "senhamarcos";
@@ -50,7 +52,7 @@ Route::post('login', function(Request $req){
     }
 
     if ($login_ok) {
-        $login = ['user'=> $req->input('user')];
+        $login = ['user'=> $req->input('user'),'admin' =>$admin];
         $req->session()->put('login', $login);
         return response("Login OK", 200);
 
