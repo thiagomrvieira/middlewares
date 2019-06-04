@@ -20,11 +20,6 @@ Route::get('/', function () {
 
 
 
-//Route::get('/usuarios', 'UsuarioControlador@index')->middleware(PrimeiroMiddleware::class);
-
-//middleware nomeado
-//Route::get('/usuarios', 'UsuarioControlador@index')->middleware('primeiro');
-
-// middleware no controller
-Route::get('/usuarios', 'UsuarioControlador@index');
+// Criando 2 middlewares, e chamando através da rota pela assinatura (primeiro e segundo) criada no kernel.php 
+Route::get('/usuarios', 'UsuarioControlador@index')->middleware('primeiro', 'segundo');
 
